@@ -14,6 +14,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 
 
-COPY src/ /src/
+COPY src/ /flask_predict_api/
 
 CMD gunicorn --bind 0.0.0.0:5000 wsgi:app
