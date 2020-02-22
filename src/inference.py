@@ -23,5 +23,5 @@ def predict():
     prediction = np.array2string(model.predict(data))
     return jsonify(prediction)
 
-if __name__ == "main":
+if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
