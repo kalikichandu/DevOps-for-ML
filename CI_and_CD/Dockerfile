@@ -5,8 +5,7 @@ EXPOSE 5000
 RUN apt-get update && apt-get install -y vim \
  && apt-get clean \
  && apt-get autoremove \
- && rm -rf /var/lib/apt/lists/* \
- && apt-get vim
+ && rm -rf /var/lib/apt/lists/* 
 
 WORKDIR /usr/src/flask_predict_api/
 
