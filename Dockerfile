@@ -13,6 +13,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-COPY src/ /usr/src/flask_predict_api/
-RUN unzip models.zip -d /models
+COPY CI_andCD/src/ /usr/src/flask_predict_api/
+RUN unzip models.zip -d /usr/src/flask_predict_api
 CMD python inference.py
