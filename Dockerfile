@@ -1,8 +1,8 @@
-FROM continuumio/anaconda3
+FROM continuumio/anaconda3:4.4.0
 MAINTAINER UNP, https://unp.education
 EXPOSE 5000
 
-RUN apt-get update && apt-get install -y vim \
+RUN apt-get update && apt-get install -y vim && apt-get install -y unzip \
  && apt-get clean \
  && apt-get autoremove \
  && rm -rf /var/lib/apt/lists/* 
@@ -13,6 +13,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-COPY src/ /usr/src/flask_predict_api/
-
-CMD gunicorn --bind 0.0.0.0:5000 wsgi:app
+COPY CI_and_CD/src/ /usr/src/flask_predict_api/
+RUN unzip models.zip -d /House_Price_Prediction_Models/
+CMD python inference.py
