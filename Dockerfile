@@ -14,5 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 
 COPY CI_and_CD/src/ /usr/src/flask_predict_api/
-RUN unzip models.zip -d /var/house_price_prediction/
 CMD python inference.py
