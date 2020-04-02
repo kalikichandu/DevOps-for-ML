@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y vim && apt-get install -y unzip \
 WORKDIR /usr/src/flask_predict_api/
 
 COPY requirements.txt /usr/src/flask_predict_api/
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 
 COPY src/ /usr/src/flask_predict_api/
