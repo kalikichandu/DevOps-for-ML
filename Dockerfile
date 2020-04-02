@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y vim && apt-get install -y unzip \
 
 WORKDIR /usr/src/flask_predict_api/
 
-
+RUN conda install numpy
 RUN conda install scikit-learn
 
 
