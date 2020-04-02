@@ -14,5 +14,5 @@ COPY requirements.txt /usr/src/flask_predict_api/
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-COPY src/ /usr/src/flask_predict_api/
+COPY CI_and_CD/src/ /usr/src/flask_predict_api/
 CMD python3 inference.py
