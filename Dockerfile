@@ -10,8 +10,9 @@ RUN apt-get update && apt-get install -y vim && apt-get install -y unzip \
 
 WORKDIR /usr/src/flask_predict_api/
 
-COPY requirements.txt /usr/src/flask_predict_api/
-RUN pip install --no-cache-dir -r requirements.txt
+
+RUN conda install scikit-learn
+
 
 
 COPY CI_and_CD/src/ /usr/src/flask_predict_api/
