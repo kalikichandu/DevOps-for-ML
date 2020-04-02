@@ -17,7 +17,7 @@ def predict():
         data.append(val)
     print(data)
     data = np.array(data).reshape(1, -1)
-    modelfile = '/var/house_price_prediction_api/models/rf.pkl'
+    modelfile = '/var/house_price_prediction/models/rf.pkl'
     model = pickle.load(open(modelfile, 'rb'))
 
     prediction = np.array2string(model.predict(data))
