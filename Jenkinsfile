@@ -21,8 +21,8 @@ pipeline {
                   
                   sh 'sudo docker build --tag ml_api .'
                   
-                  sh 'sudo docker tag ml_api kalikichandu/house_price_prediction_image:v0.4'
-                  sh 'sudo docker push kalikichandu/house_price_prediction_image:v0.4'
+                  sh 'sudo docker tag ml_api kalikichandu/house_price_prediction_image:v0.${BUILD_NUMBER}'
+                  sh 'sudo docker push kalikichandu/house_price_prediction_image:v0.${BUILD_NUMBER}'
                   
                   sh 'scp ${WORKSPACE}/Dockerfile azure_prod@104.43.164.138:/home/azure_prod/house_price_prediction_api/'
                   sh 'scp ${WORKSPACE}/requirements.txt azure_prod@104.43.164.138:/home/azure_prod/house_price_prediction_api/'
