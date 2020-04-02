@@ -3,7 +3,7 @@ MAINTAINER UNP, https://unp.education
 EXPOSE 5000
 
 RUN apt-get update && apt-get install -y vim && apt-get install -y unzip \
- && apt-get python3-pip \
+ && apt-get install -y python3-pip \
  && apt-get clean \
  && apt-get autoremove \
  && rm -rf /var/lib/apt/lists/* 
@@ -15,4 +15,4 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 
 COPY src/ /usr/src/flask_predict_api/
-CMD python inference.py
+CMD python3 inference.py
