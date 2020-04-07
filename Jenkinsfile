@@ -6,9 +6,7 @@ pipeline {
          steps {
             cleanWs()
             git 'https://github.com/kalikichandu/DevOps-for-ML.git'
-            sh 'pwd'
-            sh 'ls -lah'
-          
+                      
          }
       }
       stage('Build and Run Docker Container') {
