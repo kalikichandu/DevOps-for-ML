@@ -4,6 +4,37 @@
 
 ![Architecture](Readme%20Content/ML%20Prediction%20Flow.png)
 
+## Code Files:
+
+<ins>CI_and_CD/src/inference.py</ins>:
+
+•	Reading the Input Json data and transform it into prediction sample.
+
+•	Load the Pickled Model file and predict for Input data
+
+•	Jsonify the predictions and return the response.
+
+•	Wrap this Model Prediction code in a Flask API and expose the endpoint.
+
+<ins>Dockerfile</ins>:  Our Flask API will run inside this Docker Container.
+
+•	Using Base Image as continuumio/anaconda3:4.4.0
+
+•	Install required Ubuntu packages
+
+•	Set the Working Directory
+
+•	Copy the required Code Files.
+
+•	Install the dependent python Packages.
+
+•	Run the Flask API to serve the Model
+
+<ins>Jenkinsfile</ins>: Contains Code to build Docker Image and run Docker Container to server Model as an API.
+
+•	Pretty much the steps explained below in [ML Prediction Pipeline Steps](https://github.com/kalikichandu/DevOps-for-ML#ml-prediction-pipeline-steps).
+
+
 Whenever developer checks-in code to github and pull request is approved to merge code to Master branch then the Jenkins ML Prediction Pipeline will be triggered.
 
 ## Prerequisites for ML Prediction Pipeline:
